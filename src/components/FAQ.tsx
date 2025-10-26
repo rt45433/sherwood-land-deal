@@ -42,30 +42,30 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-gradient-section">
-      <div className="container mx-auto px-4">
+    <section id="faq" className="py-16 sm:py-24 bg-gradient-section">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               Common Questions Answered
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
               We believe in complete transparency. Here are honest answers to the questions we hear most often:
             </p>
           </div>
 
-          <Accordion type="single" collapsible className="space-y-4">
+          <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
             {faqs.map((faq, index) => (
               <AccordionItem 
                 key={index} 
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-lg px-6 shadow-soft animate-fade-in"
+                className="bg-card/80 backdrop-blur-sm border border-border/50 rounded-2xl px-5 sm:px-6 shadow-soft hover:shadow-medium transition-all duration-200 animate-fade-in"
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
-                <AccordionTrigger className="text-left hover:no-underline py-6">
-                  <span className="text-lg font-semibold text-foreground pr-4">{faq.question}</span>
+                <AccordionTrigger className="text-left hover:no-underline py-5 sm:py-6">
+                  <span className="text-base sm:text-lg font-bold text-foreground pr-4">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                <AccordionContent className="text-sm sm:text-base text-muted-foreground/80 pb-5 sm:pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

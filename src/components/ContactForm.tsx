@@ -46,21 +46,21 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-section">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-16 sm:py-24 bg-gradient-section">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
               Get Your Free Land Valuation
             </h2>
-            <p className="text-lg text-muted-foreground">
+            <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
               No obligation, no pressure – just an honest, transparent assessment of your land's value
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="lg:col-span-2">
-              <Card className="p-8 shadow-medium">
+              <Card className="p-6 sm:p-10 shadow-soft border-border/50 bg-card/80 backdrop-blur-sm">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -130,66 +130,66 @@ const ContactForm = () => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
+                  <Button type="submit" size="lg" className="w-full shadow-soft hover:shadow-medium transition-all duration-200 font-semibold">
                     Request Free Valuation
                     <Send className="ml-2 h-5 w-5" />
                   </Button>
 
-                  <p className="text-sm text-muted-foreground text-center">
+                  <p className="text-xs sm:text-sm text-muted-foreground/70 text-center">
                     We typically respond within 48 hours with an initial assessment
                   </p>
                 </form>
               </Card>
             </div>
 
-            <div className="space-y-6">
-              <Card className="p-6">
+            <div className="space-y-4 sm:space-y-6">
+              <Card className="p-5 sm:p-6 border-border/50 bg-card/80 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-200">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <Phone className="h-6 w-6" />
+                  <div className="bg-primary/10 text-primary p-3 rounded-2xl shadow-soft flex-shrink-0">
+                    <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Call Us</h3>
-                    <p className="text-muted-foreground">0115 123 4567</p>
-                    <p className="text-sm text-muted-foreground mt-1">Mon-Fri, 9am-5pm</p>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Call Us</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground/80 font-medium">0115 123 4567</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am-5pm</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-6">
+              <Card className="p-5 sm:p-6 border-border/50 bg-card/80 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-200">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <Mail className="h-6 w-6" />
+                  <div className="bg-primary/10 text-primary p-3 rounded-2xl shadow-soft flex-shrink-0">
+                    <Mail className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Email Us</h3>
-                    <p className="text-muted-foreground break-all">info@sherwoodproperty.co.uk</p>
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Email Us</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground/80 break-all font-medium">info@sherwoodproperty.co.uk</p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-6">
+              <Card className="p-5 sm:p-6 border-border/50 bg-card/80 backdrop-blur-sm shadow-soft hover:shadow-medium transition-all duration-200">
                 <div className="flex items-start gap-4">
-                  <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                    <MapPin className="h-6 w-6" />
+                  <div className="bg-primary/10 text-primary p-3 rounded-2xl shadow-soft flex-shrink-0">
+                    <MapPin className="h-5 w-5 sm:h-6 sm:w-6" />
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Service Area</h3>
-                    <p className="text-muted-foreground">
+                  <div className="min-w-0">
+                    <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Service Area</h3>
+                    <p className="text-sm sm:text-base text-muted-foreground/80">
                       Nottingham & across the East Midlands
                     </p>
                   </div>
                 </div>
               </Card>
 
-              <Card className="p-6 bg-primary/5 border-primary/20">
-                <h3 className="font-semibold text-foreground mb-2">What Happens Next?</h3>
-                <ol className="space-y-2 text-sm text-muted-foreground">
-                  <li>1. We review your land details</li>
-                  <li>2. Initial assessment within 48 hours</li>
-                  <li>3. Site visit if needed (at your convenience)</li>
-                  <li>4. Detailed valuation report provided</li>
-                  <li>5. You decide – no pressure, no obligation</li>
+              <Card className="p-5 sm:p-6 bg-primary/5 border-primary/20 shadow-soft backdrop-blur-sm">
+                <h3 className="font-semibold text-foreground mb-3 text-sm sm:text-base">What Happens Next?</h3>
+                <ol className="space-y-2 text-xs sm:text-sm text-muted-foreground/80 leading-relaxed">
+                  <li className="flex gap-2"><span className="font-semibold text-primary">1.</span> We review your land details</li>
+                  <li className="flex gap-2"><span className="font-semibold text-primary">2.</span> Initial assessment within 48 hours</li>
+                  <li className="flex gap-2"><span className="font-semibold text-primary">3.</span> Site visit if needed (at your convenience)</li>
+                  <li className="flex gap-2"><span className="font-semibold text-primary">4.</span> Detailed valuation report provided</li>
+                  <li className="flex gap-2"><span className="font-semibold text-primary">5.</span> You decide – no pressure, no obligation</li>
                 </ol>
               </Card>
             </div>
