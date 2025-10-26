@@ -1,0 +1,75 @@
+import { Card } from "@/components/ui/card";
+import { Star, Quote } from "lucide-react";
+
+const Testimonials = () => {
+  const testimonials = [
+    {
+      name: "David M.",
+      location: "Nottingham",
+      text: "After years of my land sitting empty, Sherwood Property Solutions gave me a fair, transparent valuation. They explained every cost and why their offer was what it was. I appreciated the honesty – no sales pressure, just facts. I accepted their offer and the whole process was straightforward.",
+      rating: 5
+    },
+    {
+      name: "Sarah L.",
+      location: "Derby",
+      text: "I was initially disappointed with the offer, but they sat down with me and showed me exactly where every pound was going – build costs, planning fees, everything. It made complete sense once I saw the real numbers. Their transparency gave me confidence to proceed.",
+      rating: 5
+    },
+    {
+      name: "James T.",
+      location: "Leicester",
+      text: "I had my land listed with an agent for months with no serious interest. Sherwood valued it realistically, explained the residual value method clearly, and made an offer I could work with. The transaction was smooth and completed in 10 weeks. Highly professional service.",
+      rating: 5
+    },
+    {
+      name: "Margaret R.",
+      location: "Mansfield",
+      text: "What impressed me most was their willingness to explain everything. They didn't just throw a number at me – they showed me comparable sales, development costs, and how they calculated their offer. Even though I didn't accept initially, their honesty brought me back six months later.",
+      rating: 5
+    }
+  ];
+
+  return (
+    <section id="testimonials" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
+            What Our Clients Say
+          </h2>
+          <p className="text-lg text-muted-foreground">
+            Real experiences from landowners who've worked with us across the East Midlands
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+          {testimonials.map((testimonial, index) => (
+            <Card 
+              key={index}
+              className="p-8 hover:shadow-medium transition-all duration-300 animate-fade-in relative"
+              style={{ animationDelay: `${index * 0.1}s` }}
+            >
+              <Quote className="absolute top-6 right-6 h-8 w-8 text-primary/10" />
+              
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                ))}
+              </div>
+              
+              <p className="text-muted-foreground mb-6 leading-relaxed italic">
+                "{testimonial.text}"
+              </p>
+              
+              <div className="border-t border-border pt-4">
+                <p className="font-semibold text-foreground">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Testimonials;
