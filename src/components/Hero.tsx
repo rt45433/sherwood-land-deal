@@ -38,7 +38,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <Button size="lg" onClick={scrollToContact} className="bg-white text-primary hover:bg-white/95 shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold">
+            <Button size="lg" onClick={scrollToContact} className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold">
               Get Your Free Valuation
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
@@ -46,7 +46,7 @@ const Hero = () => {
               size="lg" 
               variant="outline" 
               onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
-              className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white/50 backdrop-blur-sm transition-all duration-300 font-semibold"
+              className="border-2 border-secondary bg-secondary/20 text-white hover:bg-secondary/40 hover:border-secondary backdrop-blur-sm transition-all duration-300 font-semibold"
             >
               How It Works
             </Button>
