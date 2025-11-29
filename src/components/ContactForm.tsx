@@ -15,18 +15,18 @@ const ContactForm = () => {
     email: "",
     phone: "",
     location: "",
-    message: ""
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic validation
     if (!formData.name || !formData.email || !formData.location) {
       toast({
         title: "Missing Information",
         description: "Please fill in all required fields.",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
@@ -37,7 +37,7 @@ const ContactForm = () => {
       toast({
         title: "Invalid Email",
         description: "Please enter a valid email address.",
-        variant: "destructive"
+        variant: "destructive",
       });
       return;
     }
@@ -45,8 +45,8 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting form...');
-      
+      console.log("Submitting form...");
+
       const formPayload = {
         name: formData.name.trim(),
         email: formData.email.trim(),
@@ -54,30 +54,30 @@ const ContactForm = () => {
         location: formData.location.trim(),
         message: formData.message.trim(),
         timestamp: new Date().toISOString(),
-        source: 'sherwood-property-website'
+        source: "sherwood-property-website",
       };
 
       // Send email via edge function
-      const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: formPayload
+      const { data, error } = await supabase.functions.invoke("send-contact-email", {
+        body: formPayload,
       });
 
-      console.log('Edge function response:', { data, error });
+      console.log("Edge function response:", { data, error });
 
       if (error) {
-        console.error('Error sending email:', error);
+        console.error("Error sending email:", error);
         throw error;
       }
 
       // Trigger n8n webhook (fire and forget)
-      fetch('https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        mode: 'no-cors',
-        body: JSON.stringify(formPayload)
-      }).catch(err => console.error('n8n webhook error:', err));
+      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook-test/website-contact-form", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        mode: "no-cors",
+        body: JSON.stringify(formPayload),
+      }).catch((err) => console.error("n8n webhook error:", err));
 
-      console.log('Form submitted successfully');
+      console.log("Form submitted successfully");
 
       // Success message
       toast({
@@ -91,14 +91,14 @@ const ContactForm = () => {
         email: "",
         phone: "",
         location: "",
-        message: ""
+        message: "",
       });
     } catch (error) {
-      console.error('Form submission error:', error);
+      console.error("Form submission error:", error);
       toast({
         title: "Something went wrong",
         description: "Please try again or contact us directly by phone.",
-        variant: "destructive"
+        variant: "destructive",
       });
     } finally {
       setIsSubmitting(false);
@@ -200,9 +200,9 @@ const ContactForm = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    size="lg"
                     className="w-full shadow-soft hover:shadow-medium transition-all duration-200 font-semibold"
                     disabled={isSubmitting}
                   >
@@ -247,7 +247,9 @@ const ContactForm = () => {
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Email Us</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground/80 break-all font-medium">info@sherwoodproperty.co.uk</p>
+                    <p className="text-sm sm:text-base text-muted-foreground/80 break-all font-medium">
+                      info@sherwoodproperty.co.uk
+                    </p>
                   </div>
                 </div>
               </Card>
@@ -269,11 +271,21 @@ const ContactForm = () => {
               <Card className="p-5 sm:p-6 bg-primary/5 border-primary/20 shadow-soft backdrop-blur-sm">
                 <h3 className="font-semibold text-foreground mb-3 text-sm sm:text-base">What Happens Next?</h3>
                 <ol className="space-y-2 text-xs sm:text-sm text-muted-foreground/80 leading-relaxed">
-                  <li className="flex gap-2"><span className="font-semibold text-primary">1.</span> We review your land details</li>
-                  <li className="flex gap-2"><span className="font-semibold text-primary">2.</span> Initial assessment within 48 hours</li>
-                  <li className="flex gap-2"><span className="font-semibold text-primary">3.</span> Site visit if needed (at your convenience)</li>
-                  <li className="flex gap-2"><span className="font-semibold text-primary">4.</span> Detailed valuation report provided</li>
-                  <li className="flex gap-2"><span className="font-semibold text-primary">5.</span> You decide – no pressure, no obligation</li>
+                  <li className="flex gap-2">
+                    <span className="font-semibold text-primary">1.</span> We review your land details
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-semibold text-primary">2.</span> Initial assessment within 48 hours
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-semibold text-primary">3.</span> Site visit if needed (at your convenience)
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-semibold text-primary">4.</span> Detailed valuation report provided
+                  </li>
+                  <li className="flex gap-2">
+                    <span className="font-semibold text-primary">5.</span> You decide – no pressure, no obligation
+                  </li>
                 </ol>
               </Card>
             </div>
