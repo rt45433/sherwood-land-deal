@@ -45,6 +45,8 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Submitting form to edge function...');
+      
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: {
           name: formData.name.trim(),
@@ -54,6 +56,8 @@ const ContactForm = () => {
           message: formData.message.trim()
         }
       });
+
+      console.log('Edge function response:', { data, error });
 
       if (error) {
         console.error('Error sending email:', error);
