@@ -87,7 +87,7 @@ const ContactForm = () => {
         },
       };
 
-      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook-test/website-contact-form", {
+      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(webhookPayload),
