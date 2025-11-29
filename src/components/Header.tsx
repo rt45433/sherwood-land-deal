@@ -17,27 +17,27 @@ const Header = () => {
             <img src={logo} alt="Sherwood Property Solutions" className="h-10 w-10 sm:h-12 sm:w-12" />
             <div>
               <h2 className="font-bold text-base sm:text-lg text-foreground tracking-tight">Sherwood Property Solutions</h2>
-              <p className="text-xs text-muted-foreground font-medium">Trusted since 2014</p>
+              <p className="text-xs text-muted-foreground font-medium">Land Buyers Since 2014</p>
             </div>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection("how-it-works")} className="text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-200">
-              How It Works
+              How We Value
             </button>
             <button onClick={() => scrollToSection("faq")} className="text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-200">
               FAQ
             </button>
             <button onClick={() => scrollToSection("testimonials")} className="text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-200">
-              Testimonials
+              Success Stories
             </button>
             <Button onClick={() => scrollToSection("contact")} size="sm" className="shadow-soft hover:shadow-medium transition-all duration-200">
-              Free Valuation
+              Get An Offer
             </Button>
           </nav>
           
           <Button onClick={() => scrollToSection("contact")} size="sm" className="md:hidden">
-            Get Started
+            Sell Your Land
           </Button>
         </div>
       </div>

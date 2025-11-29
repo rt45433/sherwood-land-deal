@@ -6,19 +6,19 @@ const Testimonials = () => {
     {
       name: "David M.",
       location: "Nottingham",
-      text: "After years of my land sitting empty, Sherwood Property Solutions gave me a fair, transparent valuation. They explained every cost and why their offer was what it was. I appreciated the honesty – no sales pressure, just facts. I accepted their offer and the whole process was straightforward.",
+      text: "After years of my land sitting empty, Sherwood Property Solutions made me a fair offer. They explained every cost and why their price was what it was. I appreciated the honesty – no sales pressure, just facts. The whole process from offer to completion was straightforward.",
       rating: 5
     },
     {
       name: "Sarah L.",
       location: "Derby",
-      text: "I was initially disappointed with the offer, but they sat down with me and showed me exactly where every pound was going – build costs, planning fees, everything. It made complete sense once I saw the real numbers. Their transparency gave me confidence to proceed.",
+      text: "I was initially disappointed with the offer, but they sat down with me and showed me exactly where every pound was going – build costs, planning fees, everything. It made complete sense once I saw the real numbers. Their transparency gave me confidence to sell.",
       rating: 5
     },
     {
       name: "James T.",
       location: "Leicester",
-      text: "I had my land listed with an agent for months with no serious interest. Sherwood valued it realistically, explained the residual value method clearly, and made an offer I could work with. The transaction was smooth and completed in 10 weeks. Highly professional service.",
+      text: "I had my land listed with an agent for months with no serious buyers. Sherwood made a realistic offer, explained how they calculated it, and completed the purchase in 10 weeks. No messing about, just a professional service from start to finish.",
       rating: 5
     },
     {
@@ -34,10 +34,10 @@ const Testimonials = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-            What Our Clients Say
+            Landowners Who've Sold To Us
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
-            Real experiences from landowners who've worked with us across the East Midlands
+            Real experiences from people who've sold their land to us across the East Midlands
           </p>
         </div>
 
