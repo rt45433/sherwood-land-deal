@@ -297,7 +297,7 @@ const ContactForm = () => {
                     <span className="font-semibold text-primary">3.</span> Site visit if needed (at your convenience)
                   </li>
                   <li className="flex gap-2">
-                    <span className="font-semibold text-primary">4.</span> Detailed valuation report provided
+                    <span className="font-semibold text-primary">4.</span> We make you a fair offer
                   </li>
                   <li className="flex gap-2">
                     <span className="font-semibold text-primary">5.</span> You decide – no pressure, no obligation
