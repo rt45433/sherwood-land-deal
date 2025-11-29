@@ -45,16 +45,21 @@ const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      console.log('Submitting form to edge function...');
+      console.log('Submitting form...');
       
+      const formPayload = {
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        phone: formData.phone.trim(),
+        location: formData.location.trim(),
+        message: formData.message.trim(),
+        timestamp: new Date().toISOString(),
+        source: 'sherwood-property-website'
+      };
+
+      // Send email via edge function
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
-        body: {
-          name: formData.name.trim(),
-          email: formData.email.trim(),
-          phone: formData.phone.trim(),
-          location: formData.location.trim(),
-          message: formData.message.trim()
-        }
+        body: formPayload
       });
 
       console.log('Edge function response:', { data, error });
@@ -64,7 +69,15 @@ const ContactForm = () => {
         throw error;
       }
 
-      console.log('Email sent successfully:', data);
+      // Trigger n8n webhook (fire and forget)
+      fetch('https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
+        body: JSON.stringify(formPayload)
+      }).catch(err => console.error('n8n webhook error:', err));
+
+      console.log('Form submitted successfully');
 
       // Success message
       toast({
