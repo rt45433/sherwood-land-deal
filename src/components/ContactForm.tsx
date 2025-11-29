@@ -4,10 +4,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,7 +18,7 @@ const ContactForm = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Basic validation
@@ -29,20 +31,61 @@ const ContactForm = () => {
       return;
     }
 
-    // Success message
-    toast({
-      title: "Thank You!",
-      description: "We've received your request and will get back to you within 48 hours with your free valuation.",
-    });
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Invalid Email",
+        description: "Please enter a valid email address.",
+        variant: "destructive"
+      });
+      return;
+    }
 
-    // Reset form
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      location: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          location: formData.location.trim(),
+          message: formData.message.trim()
+        }
+      });
+
+      if (error) {
+        console.error('Error sending email:', error);
+        throw error;
+      }
+
+      console.log('Email sent successfully:', data);
+
+      // Success message
+      toast({
+        title: "Thank You!",
+        description: "We've received your request and will get back to you within 48 hours with your free valuation.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        location: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error('Form submission error:', error);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly by phone.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -73,6 +116,8 @@ const ContactForm = () => {
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="John Smith"
                         required
+                        disabled={isSubmitting}
+                        maxLength={100}
                       />
                     </div>
                     <div>
@@ -86,6 +131,8 @@ const ContactForm = () => {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="john@example.com"
                         required
+                        disabled={isSubmitting}
+                        maxLength={255}
                       />
                     </div>
                   </div>
@@ -101,6 +148,8 @@ const ContactForm = () => {
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         placeholder="01234 567890"
+                        disabled={isSubmitting}
+                        maxLength={20}
                       />
                     </div>
                     <div>
@@ -113,6 +162,8 @@ const ContactForm = () => {
                         onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                         placeholder="Nottingham, NG1 1AA"
                         required
+                        disabled={isSubmitting}
+                        maxLength={200}
                       />
                     </div>
                   </div>
@@ -127,12 +178,28 @@ const ContactForm = () => {
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Size of land, current use, planning status, any other relevant details..."
                       rows={5}
+                      disabled={isSubmitting}
+                      maxLength={2000}
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full shadow-soft hover:shadow-medium transition-all duration-200 font-semibold">
-                    Request Free Valuation
-                    <Send className="ml-2 h-5 w-5" />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full shadow-soft hover:shadow-medium transition-all duration-200 font-semibold"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? (
+                      <>
+                        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Request Free Valuation
+                        <Send className="ml-2 h-5 w-5" />
+                      </>
+                    )}
                   </Button>
 
                   <p className="text-xs sm:text-sm text-muted-foreground/70 text-center">
