@@ -14,8 +14,8 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
-              Providing fair, transparent land valuations across Nottingham and the East Midlands 
-              for over 15 years.
+              We buy land for residential development across Nottingham and the East Midlands. 
+              Fair offers, transparent pricing, no fees.
             </p>
           </div>
 
@@ -24,7 +24,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li>
                 <button onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })} className="opacity-90 hover:opacity-100 transition-opacity">
-                  How It Works
+                  How We Value Land
                 </button>
               </li>
               <li>
@@ -34,12 +34,12 @@ const Footer = () => {
               </li>
               <li>
                 <button onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })} className="opacity-90 hover:opacity-100 transition-opacity">
-                  Testimonials
+                  Success Stories
                 </button>
               </li>
               <li>
                 <button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="opacity-90 hover:opacity-100 transition-opacity">
-                  Get Valuation
+                  Get An Offer
                 </button>
               </li>
             </ul>
@@ -57,7 +57,7 @@ const Footer = () => {
 
         <div className="border-t border-secondary-foreground/20 pt-8 text-center text-sm opacity-80">
           <p>&copy; {new Date().getFullYear()} Sherwood Property Solutions Limited. All rights reserved.</p>
-          <p className="mt-2">Registered in England. Operating across Nottingham and the East Midlands.</p>
+          <p className="mt-2">Registered in England. Buying land across Nottingham and the East Midlands.</p>
         </div>
       </div>
     </footer>

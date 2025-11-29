@@ -6,32 +6,32 @@ const WhyUs = () => {
     {
       icon: Shield,
       title: "15+ Years of Trust",
-      description: "Operating since 2014, we've built our reputation on honesty and fair dealing across the East Midlands."
+      description: "Operating since 2014, we've built our reputation on honesty and fair dealing with landowners across the East Midlands."
     },
     {
       icon: FileText,
-      title: "Complete Transparency",
-      description: "We show you every calculation and cost. No hidden fees, no surprises – just straightforward, honest valuations."
+      title: "Transparent Offers",
+      description: "We show you exactly how we calculate our offer. No hidden fees, no surprises – just straightforward, honest pricing."
     },
     {
       icon: Clock,
-      title: "Fast, Professional Service",
-      description: "Get your free valuation quickly, with no pressure and no obligation. We respect your time and decision-making process."
+      title: "Fast, Simple Process",
+      description: "Get a genuine offer quickly, with no pressure and no obligation. We respect your time and your decision."
     },
     {
       icon: TrendingUp,
-      title: "Market-Based Pricing",
+      title: "Fair Market Prices",
       description: "Our offers reflect real market conditions, actual development costs, and current property values in your area."
     },
     {
       icon: Users,
-      title: "Expert Local Knowledge",
-      description: "Deep understanding of the East Midlands property market, planning environment, and development landscape."
+      title: "Local Expertise",
+      description: "Deep understanding of the East Midlands property market, planning environment, and what makes land valuable."
     },
     {
       icon: CheckCircle,
       title: "No Agent Fees",
-      description: "Whether you're listed with an agent or approaching us directly, there are no fees or commissions to pay."
+      description: "Sell directly to us with no estate agent commissions. Even if you're listed with an agent, you pay nothing extra."
     }
   ];
 
@@ -40,11 +40,11 @@ const WhyUs = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-            Why Choose Sherwood Property Solutions?
+            Why Sell Your Land To Us?
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
-            We're not trying to get your land for less than it's worth. We're offering what it's actually 
-            worth based on real development economics. Here's what makes us different:
+            We're not trying to get your land for less than it's worth. We offer what it's genuinely 
+            worth based on real development economics – and we'll show you exactly how we work it out.
           </p>
         </div>
 
@@ -72,9 +72,9 @@ const WhyUs = () => {
               </h3>
               <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
                 If our offer doesn't meet your expectations, we'll explain exactly why – showing you the 
-                detailed breakdown of costs and market values that informed our valuation. You'll never be 
-                left wondering where our figures came from. Our goal is to help you make an informed decision 
-                about your land, whether you choose to work with us or not.
+                detailed breakdown of costs and market values that informed our price. You'll never be 
+                left wondering where our figures came from. Whether you sell to us or not, you'll walk 
+                away with a clear understanding of what your land is worth.
               </p>
             </div>
           </Card>

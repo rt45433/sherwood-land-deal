@@ -29,22 +29,22 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight" style={{ animationDelay: "0.1s" }}>
-            Fair, Transparent<br />Land Valuations
+            We Buy Land<br />For Development
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in font-medium" style={{ animationDelay: "0.2s" }}>
-            Discover the true value of your land
+            Get a fair offer for your land – with or without planning
           </p>
           
           <p className="text-base md:text-lg text-white/70 mb-10 max-w-2xl mx-auto animate-fade-in leading-relaxed" style={{ animationDelay: "0.3s" }}>
-            With over 15 years of experience across Nottingham and the East Midlands, we provide honest, 
-            detailed valuations using the proven residual land value method – whether your land has 
-            planning permission or not.
+            With over 15 years of experience across Nottingham and the East Midlands, we purchase land 
+            for residential development. We'll provide you with a transparent valuation and a genuine 
+            offer – no agents, no fees, no pressure.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
             <Button size="lg" onClick={scrollToContact} className="bg-secondary text-secondary-foreground hover:bg-secondary/90 shadow-xl hover:shadow-2xl transition-all duration-300 font-semibold">
-              Get Your Free Valuation
+              Get Your Free Offer
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button 
@@ -53,22 +53,22 @@ const Hero = () => {
               onClick={() => document.getElementById("how-it-works")?.scrollIntoView({ behavior: "smooth" })}
               className="border-2 border-secondary bg-secondary/20 text-white hover:bg-secondary/40 hover:border-secondary backdrop-blur-sm transition-all duration-300 font-semibold"
             >
-              How It Works
+              How We Value Land
             </Button>
           </div>
           
           <div className="mt-16 grid grid-cols-3 gap-4 sm:gap-8 max-w-3xl mx-auto animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">15+</div>
-              <div className="text-xs sm:text-sm text-white/70 font-medium">Years Experience</div>
+              <div className="text-xs sm:text-sm text-white/70 font-medium">Years Buying Land</div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">100%</div>
-              <div className="text-xs sm:text-sm text-white/70 font-medium">Transparent Process</div>
+              <div className="text-xs sm:text-sm text-white/70 font-medium">Transparent Offers</div>
             </div>
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 sm:p-6 border border-white/10">
               <div className="text-3xl sm:text-4xl font-bold text-white mb-2">£0</div>
-              <div className="text-xs sm:text-sm text-white/70 font-medium">Obligation Fee</div>
+              <div className="text-xs sm:text-sm text-white/70 font-medium">Fees To You</div>
             </div>
           </div>
         </div>

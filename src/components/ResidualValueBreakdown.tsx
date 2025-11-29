@@ -6,7 +6,7 @@ const ResidualValueBreakdown = () => {
     {
       icon: Home,
       title: "Gross Development Value (GDV)",
-      description: "The total market value of all completed properties on the site",
+      description: "The total market value of all completed homes we could build on your land",
       example: "£2,000,000",
       color: "bg-primary/10 text-primary"
     },
@@ -26,8 +26,8 @@ const ResidualValueBreakdown = () => {
     },
     {
       icon: Coins,
-      title: "Residual Land Value",
-      description: "The remaining amount – this is what we can offer for your land",
+      title: "Our Offer For Your Land",
+      description: "The remaining amount – this is what we can pay you for your land",
       example: "£450,000",
       color: "bg-accent/10 text-accent"
     }
@@ -38,11 +38,11 @@ const ResidualValueBreakdown = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center mb-12 sm:mb-16">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 sm:mb-6">
-            Understanding Residual Land Value
+            How We Calculate Our Offer
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground/80 leading-relaxed">
-            We use a transparent, industry-standard method to calculate fair land values. 
-            Here's exactly how we work out what your land is worth:
+            We use the industry-standard residual land value method to work out a fair price for your land. 
+            Here's exactly how we calculate what we can offer you:
           </p>
         </div>
 
@@ -82,10 +82,10 @@ const ResidualValueBreakdown = () => {
               Why This Approach?
             </h3>
             <p className="text-sm sm:text-base text-muted-foreground/80 text-center leading-relaxed">
-              This residual method is the same approach used by professional developers and valuers across 
-              the UK. It ensures you receive a fair offer based on real market conditions and actual costs – 
-              not guesswork. We're completely transparent about every figure that goes into your valuation, 
-              so you understand exactly where the numbers come from.
+              This residual method is the same approach used by professional developers across the UK. 
+              It ensures we offer you a fair price based on real market conditions and actual costs – 
+              not guesswork. We're completely transparent about every figure, so you understand exactly 
+              how we arrived at our offer.
             </p>
           </Card>
         </div>
