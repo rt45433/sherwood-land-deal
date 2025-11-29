@@ -69,12 +69,29 @@ const ContactForm = () => {
         throw error;
       }
 
-      // Trigger n8n webhook (fire and forget)
-      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook-test/website-contact-form", {
+      // Trigger n8n webhook with schema-friendly structure (fire and forget)
+      const webhookPayload = {
+        contact: {
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim() || null,
+        },
+        property: {
+          location: formData.location.trim(),
+          details: formData.message.trim() || null,
+        },
+        metadata: {
+          timestamp: new Date().toISOString(),
+          source: "sherwood-property-website",
+          form_type: "land_valuation_request",
+        },
+      };
+
+      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "no-cors",
-        body: JSON.stringify(formPayload),
+        body: JSON.stringify(webhookPayload),
       }).catch((err) => console.error("n8n webhook error:", err));
 
       console.log("Form submitted successfully");
