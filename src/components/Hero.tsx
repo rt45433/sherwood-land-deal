@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, MapPin, Calendar } from "lucide-react";
+import heroBackground from "@/assets/hero-background.png";
 
 const Hero = () => {
   const scrollToContact = () => {
@@ -10,8 +11,12 @@ const Hero = () => {
   };
 
   return (
-    <section className="pt-24 sm:pt-28 pb-16 sm:pb-20 bg-gradient-hero relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE2YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00em0wIDI0YzAtMi4yMSAxLjc5LTQgNC00czQgMS43OSA0IDQtMS43OSA0LTQgNC00LTEuNzktNC00eiIvPjwvZz48L2c+PC9zdmc+')] opacity-20" />
+    <section className="pt-24 sm:pt-28 pb-16 sm:pb-20 relative overflow-hidden">
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBackground})` }}
+      />
+      <div className="absolute inset-0 bg-primary/80" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-4xl mx-auto text-center">
