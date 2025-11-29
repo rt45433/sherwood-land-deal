@@ -90,7 +90,6 @@ const ContactForm = () => {
       fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook-test/website-contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        mode: "no-cors",
         body: JSON.stringify(webhookPayload),
       }).catch((err) => console.error("n8n webhook error:", err));
 
