@@ -258,7 +258,7 @@ const ContactForm = () => {
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Call Us</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground/80 font-medium">0115 123 4567</p>
+                    <p className="text-sm sm:text-base text-muted-foreground/80 font-medium">01158 716 385</p>
                     <p className="text-xs sm:text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am-5pm</p>
                   </div>
                 </div>

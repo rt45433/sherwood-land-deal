@@ -48,7 +48,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact Information</h4>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>Phone: 0115 123 4567</li>
+              <li>Phone: 01158 716 385</li>
               <li>Email: info@sherwoodproperty.co.uk</li>
               <li>Service Area: East Midlands, UK</li>
             </ul>
