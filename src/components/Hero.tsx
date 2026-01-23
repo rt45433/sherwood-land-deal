@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight" style={{ animationDelay: "0.1s" }}>
-            We Buy Land<br />For Development Fast
+            We Buy Land<br />For Development
           </h1>
           
           <p className="text-xl md:text-2xl text-white/90 mb-4 animate-fade-in font-medium" style={{ animationDelay: "0.2s" }}>
