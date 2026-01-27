@@ -258,7 +258,7 @@ const ContactForm = () => {
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Call Us</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground/80 font-medium">01158 716 385</p>
+                    <a href="tel:+441158716385" className="text-sm sm:text-base text-muted-foreground/80 font-medium hover:text-primary transition-colors">01158 716 385</a>
                     <p className="text-xs sm:text-sm text-muted-foreground/70 mt-1">Mon-Fri, 9am-5pm</p>
                   </div>
                 </div>
@@ -271,9 +271,9 @@ const ContactForm = () => {
                   </div>
                   <div className="min-w-0">
                     <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">Email Us</h3>
-                    <p className="text-sm sm:text-base text-muted-foreground/80 break-all font-medium">
+                    <a href="mailto:info@sherwoodproperty.co.uk" className="text-sm sm:text-base text-muted-foreground/80 break-all font-medium hover:text-primary transition-colors">
                       info@sherwoodproperty.co.uk
-                    </p>
+                    </a>
                   </div>
                 </div>
               </Card>

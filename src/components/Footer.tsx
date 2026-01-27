@@ -48,8 +48,8 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact Information</h4>
             <ul className="space-y-2 text-sm opacity-90">
-              <li>Phone: 01158 716 385</li>
-              <li>Email: info@sherwoodproperty.co.uk</li>
+              <li>Phone: <a href="tel:+441158716385" className="hover:underline">01158 716 385</a></li>
+              <li>Email: <a href="mailto:info@sherwoodproperty.co.uk" className="hover:underline">info@sherwoodproperty.co.uk</a></li>
               <li>Service Area: East Midlands, UK</li>
             </ul>
           </div>
