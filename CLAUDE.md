@@ -4,8 +4,7 @@
 
 Land acquisition marketing website for Sherwood Property. A lead generation landing page targeting landowners in the East Midlands who want to sell land for residential development.
 
-**Live URL**: Hosted via Lovable
-**Lovable Project**: https://lovable.dev/projects/9401da6f-0a5a-4ac0-a91a-277c68adacd1
+**Live URL**: https://www.sherwoodproperty.co.uk
 
 ## Tech Stack
 
@@ -13,6 +12,7 @@ Land acquisition marketing website for Sherwood Property. A lead generation land
 - **Styling**: Tailwind CSS + shadcn/ui
 - **Backend**: Supabase (contact form submissions, email via Resend)
 - **Automation**: n8n webhook for lead notifications
+- **Hosting**: Netlify (free tier)
 - **Analytics**: Google Ads conversion tracking
 
 ## Development
@@ -24,7 +24,7 @@ npm run dev
 
 ## Deployment
 
-Changes pushed to `main` are automatically deployed by Lovable.
+Changes pushed to `main` on GitHub are automatically built and deployed by Netlify.
 
 ## Key Components
 
