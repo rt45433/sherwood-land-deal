@@ -5,7 +5,6 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Send, Loader2 } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -47,29 +46,6 @@ const ContactForm = () => {
     try {
       console.log("Submitting form...");
 
-      const formPayload = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim(),
-        location: formData.location.trim(),
-        message: formData.message.trim(),
-        timestamp: new Date().toISOString(),
-        source: "sherwood-property-website",
-      };
-
-      // Send email via edge function
-      const { data, error } = await supabase.functions.invoke("send-contact-email", {
-        body: formPayload,
-      });
-
-      console.log("Edge function response:", { data, error });
-
-      if (error) {
-        console.error("Error sending email:", error);
-        throw error;
-      }
-
-      // Trigger n8n webhook with schema-friendly structure (fire and forget)
       const webhookPayload = {
         contact: {
           name: formData.name.trim(),
@@ -87,11 +63,15 @@ const ContactForm = () => {
         },
       };
 
-      fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form", {
+      const response = await fetch("https://n8n.nottinghambarnbuyer.co.uk/webhook/website-contact-form", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(webhookPayload),
-      }).catch((err) => console.error("n8n webhook error:", err));
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form");
+      }
 
       console.log("Form submitted successfully");
 
