@@ -24,6 +24,7 @@ const port = server.address().port;
 const browser = await chromium.launch();
 try {
   const page = await browser.newPage();
+  await page.route(/googletagmanager\.com|doubleclick\.net|google-analytics\.com|googleadservices\.com|googlesyndication\.com/, r => r.abort());
   await page.goto(`http://127.0.0.1:${port}/`, { waitUntil: "networkidle" });
   await page.waitForSelector("main", { timeout: 15000 });
   const html = await page.content();
