@@ -42,6 +42,16 @@ const Footer = () => {
                   Get An Offer
                 </button>
               </li>
+              <li>
+                <a href="/sell-land-without-planning-permission/" className="opacity-90 hover:opacity-100 transition-opacity">
+                  Selling Land Without Planning Permission
+                </a>
+              </li>
+              <li>
+                <a href="/sell-garden-plot/" className="opacity-90 hover:opacity-100 transition-opacity">
+                  Selling a Garden Plot
+                </a>
+              </li>
             </ul>
           </div>
 
