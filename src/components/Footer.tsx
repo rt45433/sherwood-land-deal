@@ -52,6 +52,11 @@ const Footer = () => {
                   Selling a Garden Plot
                 </a>
               </li>
+              <li>
+                <a href="/what-is-my-land-worth/" className="opacity-90 hover:opacity-100 transition-opacity">
+                  What Is My Land Worth?
+                </a>
+              </li>
             </ul>
           </div>
 
