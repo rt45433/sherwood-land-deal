@@ -57,6 +57,11 @@ const Footer = () => {
                   What Is My Land Worth?
                 </a>
               </li>
+              <li>
+                <a href="/sell-agricultural-land-paddock/" className="opacity-90 hover:opacity-100 transition-opacity">
+                  Selling Agricultural Land or a Paddock
+                </a>
+              </li>
             </ul>
           </div>
 
