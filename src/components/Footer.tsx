@@ -57,6 +57,11 @@ const Footer = () => {
                   What Is My Land Worth?
                 </a>
               </li>
+              <li>
+                <a href="/option-agreement-vs-selling-land-outright/" className="opacity-90 hover:opacity-100 transition-opacity">
+                  Option Agreement vs Selling Outright
+                </a>
+              </li>
             </ul>
           </div>
 
